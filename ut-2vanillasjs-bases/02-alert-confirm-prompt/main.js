@@ -12,11 +12,7 @@ const textRespInput2 = "!!! click me to move on!!!";
 
 let alert1 = alert(text1);
 
-if (confirm(textConfirm)) {
-  alert(textTrue);
-} else {
-  alert(textFalse);
-}
+let confirm = confirm(textConfirm) ? alert(textTrue) : alert(textFalse);
 
 let input = prompt(textInput, placeHolder);
-alert(textRespInput1 + input + textRespInput2);
+let alertPrompt = alert(textRespInput1 + input + textRespInput2);

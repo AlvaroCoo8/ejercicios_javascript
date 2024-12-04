@@ -62,12 +62,7 @@ let dayOfWeek = {
  * Cualquier otra opción -> DEFAULT_DAY
  */
 export const getDayOfWeekObject = (day) => {
-  switch (true) {
-    case day in dayOfWeek:
-      return dayOfWeek[day];
-    default:
-      return DEFAULT_DAY;
-  }
+  return dayOfWeek[day] || DEFAULT_DAY;
 };
 
 /************************************************ */
@@ -111,13 +106,6 @@ let calculatorObject = {
  *
  */
 export const simpleCalculatorObject = (operator, num1, num2) => {
-  switch (operator) {
-    case "+":
-    case "-":
-    case "*":
-    case "/":
-      return calculatorObject[operator](num1, num2);
-    default:
-      return DEFAULT_OPERATOR_ERROR;
-  }
+  const operation = calculatorObject[operator];
+  return operation ? operation(num1, num2) : DEFAULT_OPERATOR_ERROR;
 };
